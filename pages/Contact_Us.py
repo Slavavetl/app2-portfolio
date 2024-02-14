@@ -16,5 +16,9 @@ From {user_email}
 """
 
     if button:
-        send_email(message)
-        st.info('Your message sent successfully')
+        try:
+            send_email(message)
+            st.info('Your message sent successfully')
+        except:
+            st.info('As sending mails needs my credentials to my mailserver, due to security resons '
+                    'it works only on my computer. Believe me it works... :) ', icon="ℹ️")
